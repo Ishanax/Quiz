@@ -1,0 +1,169 @@
+
+.choice-container{
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: white;
+  border: 0.1rem solid var(--darkGreen);
+  font-size: 2rem;
+  width: 100%;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 3px 3px 3px 0 rgba(119, 136, 153, 0.466);
+  border: 0.1rem solid var(--lightGreen);
+}
+
+.choice-prefix:hover {
+  background-color: var(--lightGreen);
+}
+
+.choice-prefix {
+  background-color: var(--darkGreen);
+  padding: 2rem 2.5rem;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.choice-text { 
+  margin: auto 0;
+  padding: 1.5rem;
+  background-color: white;
+  width: 100%;
+}
+
+.correct {
+  background-color: rgb(78, 151, 30)
+}
+
+.incorrect {
+  background-color: rgb(216, 11, 11);
+}
+
+/* HUD */
+
+#hud {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hud-prefix {
+  text-align:center;
+  font-size:medium;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+#progressBar {
+  width: 20rem;
+  height: 4rem;
+  border: solid #243e36;
+  margin-top: 1.5rem;;
+}
+
+#progressBarFull {
+  height: 3.4rem;
+  background-color: #243e36;
+  width:0%;
+}
+
+/* Dynamic background */
+html {
+  height: 100%;
+}
+body{
+  margin: 0;
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #678d58 50%, #f6e7cb 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.6);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  width: 75%;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+/* Loader */
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  border: 0.8rem solid white;
+  border-radius: 50%;
+  border-top: 0.8rem solid var(--darkGreen);
+  width: 6rem;
+  height: 6rem;
+  animation: spin 2s linear infinite;
+  background: transparent;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 480px) {
+  .content {
+    width: 95%;
+  }
+  #question {
+    font-size: 2em;
+ 
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .content{
+    width: 85%;
+  }
+  #question {
+    font-size: 2.5em;
+  }
+
+}

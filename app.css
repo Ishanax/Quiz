@@ -1,0 +1,174 @@
+:root {
+  --darkGreen: #243e36;
+  --lightGreen: #7ca982;
+  --white: #f1f7ed;
+  font-size: 62.5%;
+}
+
+*{
+  box-sizing: border-box;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding: 0;
+  color:rgb(48, 47, 47) 
+}
+
+
+/* Letters */
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 5.5rem;
+  color: var(--darkGreen);
+  margin-bottom: 5rem;
+}
+
+h1 > span {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-size: 3rem; 
+}
+
+/* Utilities */
+
+.container > * {
+  width: 100%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column; 
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons */
+
+.buttons {
+  background-color: white;
+  font-size: 1.8rem;
+  width: 20rem;
+  color:var(--darkGreen);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  border: 0.1rem solid var(--darkGreen);
+  text-transform: uppercase;
+  text-align:center;
+  
+}
+
+.buttons:hover {
+  background:var(--lightGreen);
+  transform: translateY(-0.3rem);
+  box-shadow: 3px 3px 3px 0 rgba(119, 136, 153, 0.466);
+
+}
+.buttons:active {
+  background: gray;
+}
+
+.button[disabled]:hover {
+  cursor: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* End screen forms*/
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 20rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+  box-shadow: 0 0.1rem 1.4rem 0 var(--darkGreen);
+}
+
+input ::placeholder{
+  color: #aaa;
+}
+
+/* Dynamic background */
+html {
+  height: 100%;
+}
+body{
+  margin: 0;
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #678d58 50%, #f6e7cb 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.6);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+} 
+
