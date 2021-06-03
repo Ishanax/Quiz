@@ -22,5 +22,6 @@ saveHighScore = (e) => {
   highScores.sort( (a,b) => b.score - a.score)
   highScores.splice(5);
   localStorage.setItem('highScores', JSON.stringify(highScores));
-  window.location.assign('index.html');
+// this is suppused to link back to home page after clicked save, but somehow doesn't work and gives 404:
+//   window.location.assign('index.html');   
 }
